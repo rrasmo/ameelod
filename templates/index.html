@@ -15,7 +15,17 @@
     <input type="text" name="q"/>
   </form>
   <div>
-    {{ q }}
+    <ul>
+      {% for company in companies %}
+        <li>
+          {% if company.national_identification_number %}
+            <a href="{{ url_for('company', cro=company.national_identification_number) }}">{{ company.national_identification_number }} - {{ company.name }}</a>
+          {% else %}
+            {{ company.national_identification_number }} - {{ company.name }}</a>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
   </div>
 </body>
 </html>
