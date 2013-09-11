@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>ameelod</title>
-  <meta charset="utf-8" />
-  <link href="./ameelod.css" rel="stylesheet">
-  <script src="./ameelod.js"></script>
-</head>
-
-<body>
+{% extends "layout.html" %}
+{% block body %}
   <div>
     Search a company
   </div>
@@ -27,6 +19,4 @@
       {% endfor %}
     </ul>
   </div>
-</body>
-</html>
-
+{% endblock %}

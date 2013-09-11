@@ -24,7 +24,8 @@ def index():
 
 @app.route('/company/<cro>')
 def company(cro):
-    return cro
+    company = None
+    return render_template('company.html', company=company)
 
 
 if __name__ == '__main__':
