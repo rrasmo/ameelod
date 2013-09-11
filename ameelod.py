@@ -1,12 +1,8 @@
 from flask import Flask
 from flask import render_template, url_for, request
 import requests
+from config import *
 
-
-API_KEY = ''
-API_SECRET = ''
-API_COMPANIES_URL = 'https://www.amee.com/api/companies'
-API_COMPANY_URL = 'https://www.amee.com/api/company'
 
 
 app = Flask(__name__, static_url_path='')
@@ -14,7 +10,7 @@ app = Flask(__name__, static_url_path='')
 @app.route('/')
 def index():
     q = request.args.get('q')
-    companies = None
+    companies = []
     if q:
         res = requests.get(API_COMPANIES_URL, auth=(API_KEY, API_SECRET), params={'company_name': q})
         if res.ok:
