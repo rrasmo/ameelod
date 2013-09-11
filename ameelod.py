@@ -21,6 +21,10 @@ def index():
 @app.route('/company/<cro>')
 def company(cro):
     company = None
+    if cro:
+        res = requests.get(API_COMPANIES_URL + '/' + cro, auth=(API_KEY, API_SECRET), params={'type': 'CRO'})
+        if res.ok:
+            company = res.json()['company']
     return render_template('company.html', company=company)
 
 

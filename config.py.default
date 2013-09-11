@@ -1,5 +1,4 @@
 API_KEY = ''
 API_SECRET = ''
 API_COMPANIES_URL = 'https://www.amee.com/api/companies'
-API_COMPANY_URL = 'https://www.amee.com/api/company'
 
