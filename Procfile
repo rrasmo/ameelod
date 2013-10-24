@@ -1,0 +1,1 @@
+web: gunicorn ameelod:app
